@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>
+  <button class="js-textareacopybtn" style="vertical-align:top;">Pusty znak</button>
+  <textarea style="display:none;" class="js-copytextarea">​</textarea>
+</p>
+<script>
+var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+
+copyTextareaBtn.addEventListener('click', function(event) {
+  var copyTextarea = document.querySelector('.js-copytextarea');
+  copyTextarea.focus();
+  copyTextarea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+});
+</script>
+
+</body>
+</html>
+
