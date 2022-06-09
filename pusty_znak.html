@@ -1,37 +1,119 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Pusty Znak</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
+         .tooltip {
+         position: relative;
+         display: inline-block;
+         }
+         .tooltip .tooltiptext {
+         visibility: hidden;
+         width: 140px;
+         background-color: #555;
+         color: #fff;
+         text-align: center;
+         border-radius: 6px;
+         padding: 5px;
+         position: absolute;
+         z-index: 1;
+         bottom: 150%;
+         left: 50%;
+         margin-left: -75px;
+         opacity: 0;
+         transition: opacity 0.3s;
+         }
+         .tooltip .tooltiptext::after {
+         content: "";
+         position: absolute;
+         top: 100%;
+         left: 50%;
+         margin-left: -5px;
+         border-width: 5px;
+         border-style: solid;
+         border-color: #555 transparent transparent transparent;
+         }
+         .tooltip:hover .tooltiptext {
+         visibility: visible;
+         opacity: 1;
+         }
          body {
          font-family: Helvetica, sans-serif;
          }
       </style>
    </head>
    <body>
-      <h1 style="font-size:16px">ZWSP</h1>
-      <input id="input1" type="text" value="​​​"/>
-      <button id="copy1">Skopiuj</button>
+      <h1 style="font-size:16px">ZWSP (stare)</h1>
+      <input type="text" value="​​​" id="ZWSP3">
+      <div class="tooltip">
+         <button onclick="zwsp3Copy()" onmouseout="outFunc()">
+         <span class="tooltiptext" id="Tooltip1">Skopiuj</span>
+         Skopiuj
+         </button>
+      </div>
       <script>
-         function copy1() {
-           var copyText = document.querySelector("#input1");
-           copyText.select();
-           document.execCommand("copy");
+         function zwsp3Copy() {
+         var copyText = document.getElementById("ZWSP3");
+         copyText.select();
+         copyText.setSelectionRange(0, 99999);
+         navigator.clipboard.writeText(copyText.value);
+           
+         var tooltip = document.getElementById("Tooltip1");
+           tooltip.innerHTML = "Skopiowano";
          }
          
-         document.querySelector("#copy1").addEventListener("click", copy);
+         function outFunc() {
+           var tooltip = document.getElementById("Tooltip1");
+           tooltip.innerHTML = "Skopiuj";
+         }
+      </script>
+      <h1 style="font-size:16px">ZWSP (nowe)</h1>
+      <input type="text" value="​" id="ZWSP">
+      <div class="tooltip">
+         <button onclick="zwspCopy()" onmouseout="outFunc()">
+         <span class="tooltiptext" id="Tooltip2">Skopiuj</span>
+         Skopiuj
+         </button>
+      </div>
+      <script>
+         function zwspCopy() {
+         var copyText = document.getElementById("ZWSP");
+         copyText.select();
+         copyText.setSelectionRange(0, 99999);
+         navigator.clipboard.writeText(copyText.value);
+           
+         var tooltip = document.getElementById("Tooltip2");
+           tooltip.innerHTML = "Skopiowano";
+         }
+         
+         function outFunc() {
+           var tooltip = document.getElementById("Tooltip2");
+           tooltip.innerHTML = "Skopiuj";
+         }
       </script>
       <h1 style="font-size:16px">ZWNJ</h1>
-      <input id="input2" type="text" value="‌"/>
-      <button id="copy2">Skopiuj</button>
+      <input type="text" value="‌" id="ZWNJ">
+      <div class="tooltip">
+         <button onclick="zwnjCopy()" onmouseout="outFunc()">
+         <span class="tooltiptext" id="Tooltip3">Skopiuj</span>
+         Skopiuj
+         </button>
+      </div>
       <script>
-         function copy2() {
-           var copyText = document.querySelector("#input2");
-           copyText.select();
-           document.execCommand("copy");
+         function zwnjCopy() {
+         var copyText = document.getElementById("ZWNJ");
+         copyText.select();
+         copyText.setSelectionRange(0, 99999);
+         navigator.clipboard.writeText(copyText.value);
+           
+         var tooltip = document.getElementById("Tooltip3");
+           tooltip.innerHTML = "Skopiowano";
          }
          
-         document.querySelector("#copy2").addEventListener("click", copy);
+         function outFunc() {
+           var tooltip = document.getElementById("Tooltip3");
+           tooltip.innerHTML = "Skopiuj";
+         }
       </script>
    </body>
 </html>
