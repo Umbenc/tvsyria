@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head><title>Pusty Znak</title></head>
-<body>
-<input id="input" type="text" value="​​​"/>
-<button id="copy">Skopiuj</button>
-<script>
-function copy() {
-  var copyText = document.querySelector("#input");
-  copyText.select();
-  document.execCommand("copy");
-}
-
-document.querySelector("#copy").addEventListener("click", copy);
-</script>
-</body>
+   <head>
+      <title>Pusty Znak</title>
+      <style>
+         body {
+         font-family: Helvetica, sans-serif;
+         }
+      </style>
+   </head>
+   <body>
+      <h1 style="font-size:16px">ZWSP</h1>
+      <input id="input1" type="text" value="​​​"/>
+      <button id="copy1">Skopiuj</button>
+      <script>
+         function copy1() {
+           var copyText = document.querySelector("#input1");
+           copyText.select();
+           document.execCommand("copy");
+         }
+         
+         document.querySelector("#copy1").addEventListener("click", copy);
+      </script>
+      <h1 style="font-size:16px">ZWNJ</h1>
+      <input id="input2" type="text" value="‌"/>
+      <button id="copy2">Skopiuj</button>
+      <script>
+         function copy2() {
+           var copyText = document.querySelector("#input2");
+           copyText.select();
+           document.execCommand("copy");
+         }
+         
+         document.querySelector("#copy2").addEventListener("click", copy);
+      </script>
+   </body>
 </html>
