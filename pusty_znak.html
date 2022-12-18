@@ -116,5 +116,29 @@
            tooltip.innerHTML = "Skopiuj";
          }
       </script>
+      <h1 style="font-size:16px">BLANK (odwrócenie)</h1>
+      <input type="text" value="&#x202B;" id="BLANK">
+      <div class="tooltip">
+         <button onclick="blankCopy()" onmouseout="outFunc()">
+         <span class="tooltiptext" id="Tooltip4">Skopiuj</span>
+         Skopiuj
+         </button>
+      </div>
+      <script>
+         function blankCopy() {
+         var copyText = document.getElementById("BLANK");
+         copyText.select();
+         copyText.setSelectionRange(0, 99999);
+         navigator.clipboard.writeText(copyText.value);
+           
+         var tooltip = document.getElementById("Tooltip4");
+           tooltip.innerHTML = "Skopiowano";
+         }
+         
+         function outFunc() {
+           var tooltip = document.getElementById("Tooltip4");
+           tooltip.innerHTML = "Skopiuj";
+         }
+      </script>
    </body>
 </html>
